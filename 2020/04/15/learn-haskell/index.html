@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>从零开始haskell的学习 | NeroBlackstone&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    
+    <meta name="description" content="">
+    <link rel="preload" href="/assets/css/0.styles.efb332ed.css" as="style"><link rel="preload" href="/assets/js/app.ec2d5af2.js" as="script"><link rel="preload" href="/assets/js/3.e9bff2d3.js" as="script"><link rel="preload" href="/assets/js/45.9aec365f.js" as="script"><link rel="prefetch" href="/assets/js/10.7e730691.js"><link rel="prefetch" href="/assets/js/11.0a8c3a3b.js"><link rel="prefetch" href="/assets/js/12.e41009b6.js"><link rel="prefetch" href="/assets/js/13.615800ed.js"><link rel="prefetch" href="/assets/js/14.9ff2a10b.js"><link rel="prefetch" href="/assets/js/15.c0f3d8e0.js"><link rel="prefetch" href="/assets/js/16.267a81c0.js"><link rel="prefetch" href="/assets/js/17.85b26636.js"><link rel="prefetch" href="/assets/js/18.1172ae07.js"><link rel="prefetch" href="/assets/js/19.02da22ed.js"><link rel="prefetch" href="/assets/js/20.899cfc38.js"><link rel="prefetch" href="/assets/js/21.48a7b777.js"><link rel="prefetch" href="/assets/js/22.ae905edc.js"><link rel="prefetch" href="/assets/js/23.145304b2.js"><link rel="prefetch" href="/assets/js/24.fc9aa772.js"><link rel="prefetch" href="/assets/js/25.5370690c.js"><link rel="prefetch" href="/assets/js/26.4092c0ff.js"><link rel="prefetch" href="/assets/js/27.211a8f61.js"><link rel="prefetch" href="/assets/js/28.7b4de4b7.js"><link rel="prefetch" href="/assets/js/29.443848ae.js"><link rel="prefetch" href="/assets/js/30.8fb8f839.js"><link rel="prefetch" href="/assets/js/31.39c4255a.js"><link rel="prefetch" href="/assets/js/32.6e0fb50b.js"><link rel="prefetch" href="/assets/js/33.919f59b2.js"><link rel="prefetch" href="/assets/js/34.2fd50063.js"><link rel="prefetch" href="/assets/js/35.3dfac06e.js"><link rel="prefetch" href="/assets/js/36.a873c79a.js"><link rel="prefetch" href="/assets/js/37.85faec35.js"><link rel="prefetch" href="/assets/js/38.e83fe327.js"><link rel="prefetch" href="/assets/js/39.6be1856f.js"><link rel="prefetch" href="/assets/js/4.78206645.js"><link rel="prefetch" href="/assets/js/40.93ddf935.js"><link rel="prefetch" href="/assets/js/41.88d92bf1.js"><link rel="prefetch" href="/assets/js/42.b3d6f88b.js"><link rel="prefetch" href="/assets/js/43.1c5dc4d4.js"><link rel="prefetch" href="/assets/js/44.195f887c.js"><link rel="prefetch" href="/assets/js/46.a1714c92.js"><link rel="prefetch" href="/assets/js/47.07f6e748.js"><link rel="prefetch" href="/assets/js/48.edfe58e7.js"><link rel="prefetch" href="/assets/js/5.290e8a5b.js"><link rel="prefetch" href="/assets/js/6.0be4f557.js"><link rel="prefetch" href="/assets/js/7.df8bc73d.js"><link rel="prefetch" href="/assets/js/8.9882d415.js"><link rel="prefetch" href="/assets/js/9.62493693.js"><link rel="prefetch" href="/assets/js/vuejs-paginate.07834b74.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.efb332ed.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="global-layout"><nav role="navigation" aria-label="main navigation" class="navbar is-primary is-fixed-top"><div class="navbar-brand"><a href="/" to="/" class="navbar-item router-link-active">
+        NeroBlackstone's Blog
+    </a><a role="button" aria-label="menu" class="navbar-burger burger"><span aria-hidden="true"></span> <span aria-hidden="true"></span> <span aria-hidden="true"></span></a></div><div class="navbar-menu"><div class="navbar-start"></div><div class="navbar-end"><a href="/tag/" to="/tag/" class="navbar-item">Tag</a> <a href="/friends/" to="/friends/" class="navbar-item">Friends</a></div></div></nav> <section class="section"><div class="container"><div class="content__default"><h1 id="从零开始haskell的学习"><a href="#从零开始haskell的学习" class="header-anchor">#</a> 从零开始haskell的学习</h1> <h2 id="准备工作"><a href="#准备工作" class="header-anchor">#</a> 准备工作</h2> <p>安装ghci（Glasgow Haskell Compiler's interactive environment）和stack（haskell的包管理工具）。</p> <h2 id="ghci的使用"><a href="#ghci的使用" class="header-anchor">#</a> ghci的使用</h2> <h3 id="更改默认prompt"><a href="#更改默认prompt" class="header-anchor">#</a> 更改默认prompt</h3> <p>默认的prompt是Prelude，可以用下面的指令更改：</p> <div class="language- extra-class"><pre class="language-text"><code>:set prompt &quot;ghci&gt;&quot;
+</code></pre></div><h3 id="简单的数学运算"><a href="#简单的数学运算" class="header-anchor">#</a> 简单的数学运算</h3> <p>ghci可以执行简单的四则运算：</p> <div class="language- extra-class"><pre class="language-text"><code>ghci&gt; 2 + 15  
+17  
+ghci&gt; 49 * 100  
+4900  
+ghci&gt; 1892 - 1472  
+420  
+ghci&gt; 5 / 2  
+2.5
+</code></pre></div><h3 id="更复杂的数学运算"><a href="#更复杂的数学运算" class="header-anchor">#</a> 更复杂的数学运算</h3> <p>更复杂的数学运算也是可以的，ghci可以正确判断优先级，也可以使用圆括号来精确描述优先级。（负数最好加上括号）</p> <div class="language- extra-class"><pre class="language-text"><code>ghci&gt; (50 * 100) - 4999  
+1  
+ghci&gt; 50 * 100 - 4999  
+1  
+ghci&gt; 50 * (100 - 4999)  
+-244950
+</code></pre></div><p>布尔运算也非常的直观, 可以使用not来对True或False取反(注意一定要大写这两个词)</p> <div class="language- extra-class"><pre class="language-text"><code>ghci&gt; True &amp;&amp; False  
+False  
+ghci&gt; True &amp;&amp; True  
+True  
+ghci&gt; False || True  
+True   
+ghci&gt; not False  
+True  
+ghci&gt; not (True &amp;&amp; True)  
+False
+</code></pre></div><p>测试相等用==，不相等用/=</p> <div class="language- extra-class"><pre class="language-text"><code>ghci&gt; 5 == 5  
+True  
+ghci&gt; 1 == 0  
+False  
+ghci&gt; 5 /= 5  
+False  
+ghci&gt; 5 /= 4  
+True  
+ghci&gt; &quot;hello&quot; == &quot;hello&quot;  
+True
+</code></pre></div><p>如果使用不同的数据类型，判断相加或相等，则会报错，例如5+“llama”：</p> <div class="language- extra-class"><pre class="language-text"><code>No instance for (Num [Char])  
+arising from a use of `+' at &lt;interactive&gt;:1:0-9  
+Possible fix: add an instance declaration for (Num [Char])  
+In the expression: 5 + &quot;llama&quot;  
+In the definition of `it': it = 5 + &quot;llama&quot;
+</code></pre></div><p>+只适用于左右均为数字的情况，==只适用于左右均为可比较类型的情况。另外当5+4.0时，5会转为浮点，输出9.0</p> <h2 id="中缀函数（infix-function）与前缀函数（prefix-function）"><a href="#中缀函数（infix-function）与前缀函数（prefix-function）" class="header-anchor">#</a> 中缀函数（infix function）与前缀函数（prefix function）</h2> <p>中缀函数就是像四则运算符一样，前后接受两个参数。</p> <p>大多数不参与数学运算的函数为前缀函数。</p> <p>在haskell中，函数通过写函数名，空格，和参数来调用：</p> <div class="language- extra-class"><pre class="language-text"><code>ghci&gt; succ 8  
+9 
+</code></pre></div><p><code>scuu</code>函数接收任何具有定义的后继的元素作为参数，然后返回它的后继。</p> <p><code>min</code>和<code>max</code>则接收两个可以排序的元素，min返回较小的，而max返回较大的。</p> <div class="language- extra-class"><pre class="language-text"><code>ghci&gt; min 9 10  
+9  
+ghci&gt; min 3.4 3.2  
+3.2  
+ghci&gt; max 100 101  
+101   
+</code></pre></div><p>函数具有最高的优先级。也就是说下面两个式子相等：</p> <div class="language- extra-class"><pre class="language-text"><code>ghci&gt; succ 9 + max 5 4 + 1  
+16  
+ghci&gt; (succ 9) + (max 5 4) + 1  
+16 
+</code></pre></div><p>接收两个参数的函数也可以是中缀的，这要通过将函数名用反引号包裹来实现。比如<code>div</code>可以实现两个数的整除。<code>div 92 10</code>返回9。但是这样写会搞不清谁除谁。所以可以用中缀函数的形式，即<code>92</code>div<code>10</code>。</p> <p>在haskell中，只有空格代表函数调用。<strong>括号只代表运算优先级</strong> 。假如有<code>bar (bar 3)</code>这种形式的语句，不代表bar使用bar 3为参数，而是表示先计算bar 3，取得数字，然后再用bar调用那个数字作为参数。在c语言中，会写成<code>bar(bar(3))</code></p></div> <!----></div></section> <footer class="footer" data-v-29777868><div class="level" data-v-29777868><div class="content level-item has-text-centered" data-v-29777868><div class="field is-grouped-multiline is-grouped" data-v-29777868><!----> <div class="control" data-v-29777868><span class="tag is-primary" data-v-29777868><span><a href="https://github.com/NeroBlackstone" class="has-text-white" data-v-29777868><span class="icon" data-v-29777868><i class="fab fa-github" data-v-29777868></i></span></a></span> <!----></span></div> <div class="control" data-v-29777868><a href="https://v1.vuepress.vuejs.org/" data-v-29777868><div class="tags has-addons" data-v-29777868><span class="tag is-dark" data-v-29777868><span>vuepress</span> <!----></span> <span class="tag is-info" data-v-29777868><span>1.5.0</span> <!----></span></div></a></div><div class="control" data-v-29777868><a href="https://buefy.org/" data-v-29777868><div class="tags has-addons" data-v-29777868><span class="tag is-dark" data-v-29777868><span>buefy</span> <!----></span> <span class="tag is-info" data-v-29777868><span>0.8.20</span> <!----></span></div></a></div> <!----></div></div></div></footer></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.ec2d5af2.js" defer></script><script src="/assets/js/3.e9bff2d3.js" defer></script><script src="/assets/js/45.9aec365f.js" defer></script>
+  </body>
+</html>

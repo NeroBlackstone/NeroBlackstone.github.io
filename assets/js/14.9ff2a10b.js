@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[14],{368:function(t,n,e){"use strict";e.r(n);var s={name:"Friends"},a=e(14),r=Object(a.a)(s,(function(){var t=this.$createElement;return(this._self._c||t)("a",{attrs:{href:"https://blog.sgdylan.com"}},[this._v("SgDylan")])}),[],!1,null,"41d099c4",null);n.default=r.exports}}]);
